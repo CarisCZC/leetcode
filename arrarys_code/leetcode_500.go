@@ -2,8 +2,6 @@
 
 package main
 
-import "fmt"
-
 func findWords(words []string) (ans []string) {
 	line1 := "qwertyuiop"
 	line2 := "asdfghjkl"
@@ -43,8 +41,25 @@ func findWords(words []string) (ans []string) {
 	return ans
 }
 
-func main() {
-	words := []string{"Hello", "Alaska", "Dad", "Peace"}
-	fmt.Println(findWords(words))
-	// fmt.println(findWords(words))
-}
+// func main() {
+// 	words := []string{"Hello", "Alaska", "Dad", "Peace"}
+// 	fmt.Println(findWords(words))
+// 	// fmt.println(findWords(words))
+// }
+
+// 官方写法，比较自己的写法在空间上是更优的
+// 对于next的用法也是很巧妙的，这样就不需要使用flag
+// func findWords(words []string) (ans []string) {
+//     const rowIdx = "12210111011122000010020202"
+// next:
+//     for _, word := range words {
+//         idx := rowIdx[unicode.ToLower(rune(word[0]))-'a']
+//         for _, ch := range word[1:] {
+//             if rowIdx[unicode.ToLower(ch)-'a'] != idx {
+//                 continue next
+//             }
+//         }
+//         ans = append(ans, word)
+//     }
+//     return
+// }
