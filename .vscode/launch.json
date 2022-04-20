@@ -12,7 +12,9 @@
             "env":{
                 "GO111MODULE": "off"
             },
+            //如果希望单个文件调试，就是用{file}，如果希望一个文件夹调试{fileDirname}
             "program": "${file}",
+            
         }
     ]
 }
