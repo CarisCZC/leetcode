@@ -20,7 +20,6 @@
 // };
 
 var balancedStringSplit = function (s) {
-  // 需要一个栈结构
   let res = 0,
     n = 0;
   for (const ch of s) {
