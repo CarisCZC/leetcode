@@ -23,6 +23,7 @@ func topKFrequent(nums []int, k int) []int {
 	return ans[:k]
 }
 
+// heap的用法
 func topKFrequent2(nums []int, k int) []int {
 	occurrences := map[int]int{}
 	for _, num := range nums {
