@@ -9,7 +9,6 @@ func jump(nums []int) int {
 	if len(nums) == 1 {
 		return res
 	}
-	// res++ // 进入循环，说明至少要跳一次
 	for i := 1; i < len(nums); i++ {
 		if i > preDp { //当目前台阶已经是前一个台阶不可达的时候，先跳到新台阶
 			preDp = dp
