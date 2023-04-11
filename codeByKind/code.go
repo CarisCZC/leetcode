@@ -7,6 +7,8 @@ func main() {
 	m := 3
 	pipe := make(chan int, len(nums))
 	res := 0
+	// 在go里头，管道可以带有缓冲区，当缓冲区满时。向管道写的线程会被阻塞，等待读取。
+	// 当读取一个了一个数据后，此时管道的容量被释放，被阻塞的线程会继续执行。
 	ctl := make(chan int, m)
 	for i := 0; i < len(nums); i++ {
 		go compute(nums[i], pipe, ctl)
@@ -23,7 +25,6 @@ func compute(num int, pipe chan int, ctl chan int) {
 	doTask(num)
 	<-ctl
 	pipe <- doTask(num)
-	// return res
 }
 
 func doTask(num int) int {
