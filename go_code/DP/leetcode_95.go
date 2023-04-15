@@ -19,15 +19,17 @@ func backtrack(start, end int) []*TreeNode {
 		return []*TreeNode{nil}
 	}
 	allTrees := []*TreeNode{}
-
+	// 树一定会用到回溯
+	// 这题的重点是怎么获得左右子树。
 	for i := start; i <= end; i++ {
-		// 左子树集合
 		leftTrees := backtrack(start, i-1)
+
 		rightTrees := backtrack(i+1, end)
+
 		for _, left := range leftTrees {
 			for _, right := range rightTrees {
-				currTree := &TreeNode{i, left, right}
-				allTrees = append(allTrees, currTree)
+				curTree := &TreeNode{i, left, right}
+				allTrees = append(allTrees, curTree)
 			}
 		}
 	}
