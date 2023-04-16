@@ -14,7 +14,7 @@ type TreeNode struct {
 func maxPathSum(root *TreeNode) int {
 	maxRoad := math.MinInt32
 	var findRoad func(*TreeNode) int
-	findRoad = func(node *TreeNode) int {
+	findRoad = func(root *TreeNode) int {
 		if root == nil {
 			return 0
 		}
@@ -22,7 +22,7 @@ func maxPathSum(root *TreeNode) int {
 		rightRoad := max(findRoad(root.Right), 0)
 		priceNewPath := root.Val + leftRoad + rightRoad
 		maxRoad = max(maxRoad, priceNewPath)
-		return node.Val + max(leftRoad, rightRoad)
+		return root.Val + max(leftRoad, rightRoad)
 	}
 	findRoad(root)
 	return maxRoad

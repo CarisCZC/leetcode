@@ -1,6 +1,6 @@
 package main
 
-// dp[i]= nums[:i]的最大乘积\
+// dp[i]= nums[:i]的最大乘积
 // 分两类讨论：要么，负负得正，要么就正正更大
 func maxProduct(nums []int) int {
 	maxF, minF, ans := nums[0], nums[0], nums[0]
