@@ -8,11 +8,11 @@ func maxRotateFunction(nums []int) int {
 		sum += v
 	}
 	f := 0
-	ans := f
-	for j := 0; j < n; j++ {
-		f = j * nums[j]
-	}
 
+	for j := 0; j < n; j++ {
+		f += j * nums[j]
+	}
+	ans := f
 	for i := n - 1; i > 0; i-- {
 		// 这个循环中，唯一的变量是nums[i],[i]确实要从最大开始
 		// n-k = i，当k=1时，i= n-1
