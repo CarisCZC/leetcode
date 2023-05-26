@@ -23,7 +23,7 @@ func search(nums []int, target int) int {
 	for l <= r {
 		mid := (l + r) / 2
 		if nums[mid] == target {
-			return target
+			return mid
 		}
 		if nums[0] <= nums[mid] { // 说明mid左边是有序的
 			if nums[0] <= target && target <= nums[mid] { // target在该半区
