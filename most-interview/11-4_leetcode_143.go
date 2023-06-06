@@ -40,14 +40,3 @@ func reverse(head *ListNode) *ListNode {
 	}
 	return p.Next
 }
-
-func main() {
-	head := &ListNode{1, nil}
-	cur := head
-	for i := 2; i < 7; i++ {
-		node := &ListNode{i, nil}
-		cur.Next = node
-		cur = cur.Next
-	}
-	reorderList(head)
-}
